@@ -16,7 +16,7 @@ import lombok.*;
 @Table(name = "order")
 
 
-public class Order {
+public class Order extends Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
