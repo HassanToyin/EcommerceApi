@@ -7,12 +7,14 @@ import com.ECommerce.WebApi.repository.CustomerRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 @AllArgsConstructor
 public class CustomerService {
     private final CustomerRepo customerRepo;
 
-    public Customer createCustomer(CustomerDto customerDTO) {
+    public static Customer createCustomer(CustomerDto customerDTO) {
 
         Customer customer = new Customer();
 
@@ -29,7 +31,7 @@ public class CustomerService {
         return customerRepo.findById(id).orElseThrow(() -> new RuntimeException("Customer not found"));
     }
 
-    public ArrayList<Customer> getAllCustomers() {
+    public static ArrayList<Customer> getAllCustomers() {
         return (ArrayList<Customer>) customerRepo.findAll();
     }
 

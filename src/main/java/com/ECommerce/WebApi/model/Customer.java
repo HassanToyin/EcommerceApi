@@ -1,11 +1,16 @@
 package com.ECommerce.WebApi.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 //import lombok.*;
 
 @Entity
-//@NoArgsConstructor
-//@AllArgsConstructor @Data
+@NoArgsConstructor
+@AllArgsConstructor @Data
 @Table(name = "customer")
 
 public class Customer {
@@ -25,4 +30,7 @@ public class Customer {
 
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Order> orders;
 }

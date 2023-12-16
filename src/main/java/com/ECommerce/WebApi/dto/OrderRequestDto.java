@@ -9,5 +9,5 @@ import java.util.ArrayList;
 
 public class OrderRequestDto {
     private Long customerId;
-    private ArrayList<OrderItemDTO> products;
+    private ArrayList<OrderItemDto> products;
 }

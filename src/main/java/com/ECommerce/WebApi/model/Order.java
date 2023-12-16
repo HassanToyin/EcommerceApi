@@ -12,11 +12,12 @@ import java.time.LocalDateTime;
 import lombok.*;
 
 @Entity
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "order")
 
 
-public class Order extends Product {
+public class Order{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,5 +35,6 @@ public class Order extends Product {
     private Double totalAmount;
 
     @Column(name = "orderItems")
-    private List<OrderItem> orderItem;
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems;
 }
